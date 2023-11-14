@@ -17,7 +17,7 @@ const secret =  'ujk857y383ifnkmlertert6357';
 
 app.use(cors({
     credentials: true, 
-    origin: '*',
+    origin: 'https://radblok23.onrender.com/',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
 }));
 app.options('*', cors()); // Enable preflight requests for all routes
