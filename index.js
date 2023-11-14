@@ -20,6 +20,8 @@ app.use(cors({
     origin: 'https://radblok23.onrender.com',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
 }));
+app.options('*', cors()); // Enable preflight requests for all routes
+
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
