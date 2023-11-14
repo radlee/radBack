@@ -17,11 +17,15 @@ const secret =  'ujk857y383ifnkmlertert6357';
 
 app.use(cors({
     credentials: true, 
-    origin: 'https://radblok23.onrender.com/',
+    origin: 'https://radblok23.onrender.com',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
 }));
 app.options('*', cors()); // Enable preflight requests for all routes
 
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+});
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
